@@ -38,4 +38,14 @@ public class ProductService {
     public Product getProductByName(String name) {
         return repository.findByName(name);
     }
+
+    // Delete Single Product with reference of ID
+    public String deleteProduct(int id) {
+        repository.deleteById(id);
+        return "product removed !! " + id;
+    }
+
+    public Product updateProduct(Product product){
+        Product existingProduct=repository.findById(product.getId()).orElse(product);
+    }
 }
