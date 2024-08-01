@@ -19,7 +19,7 @@ public class Product {
     @GeneratedValue
     private int id;
     private String name;
-    private int quantity;
     private double price;
+    private int quantity;
 
 }

@@ -30,7 +30,7 @@ public class ProductController {
         return service.saveProducts(products);
     }
 
-    @GetMapping("products")
+    @GetMapping("/products")
     public List<Product> findAllProducts() {
         return service.getProducts();
     }
