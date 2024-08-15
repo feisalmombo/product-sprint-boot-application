@@ -17,14 +17,17 @@ import com.efetech.spring_boot_crud_project.service.ProductService;
 @RestController
 public class ProductController {
 
+    // Inject from service
     @Autowired
     private ProductService service;
 
+    // Route for add product
     @PostMapping("/api/v1/product/add/product")
     public Product addProduct(@RequestBody Product product) {
         return service.saveProduct(product);
     }
 
+    // Route for add List of product
     @PostMapping("/api/v1/product/add/products")
     public List<Product> addProducts(@RequestBody List<Product> products) {
         return service.saveProducts(products);
