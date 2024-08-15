@@ -33,26 +33,31 @@ public class ProductController {
         return service.saveProducts(products);
     }
 
+    // Route to get all products
     @GetMapping("/api/v1/all/products")
     public List<Product> findAllProducts() {
         return service.getProducts();
     }
 
+    // Route to get single product by ID
     @GetMapping("/api/v1/single/product/byId/{id}")
     public Product findProductById(@PathVariable int id) {
         return service.getProductById(id);
     }
 
+    // Route to get Single product by Name
     @GetMapping("/api/v1/single/product/byName/{name}")
     public Product findProductByName(@PathVariable String name) {
         return service.getProductByName(name);
     }
 
+    // Route for update product
     @PutMapping("/api/v1/product/update/product")
     public Product updateProduct(@RequestBody Product product) {
         return service.updateProduct(product);
     }
 
+    // Route to delete product
     @DeleteMapping("/api/v1/product/delete/{id}")
     public String deleteProduct(@PathVariable int id) {
         return service.deleteProduct(id);
